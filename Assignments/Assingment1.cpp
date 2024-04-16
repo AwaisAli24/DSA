@@ -86,7 +86,17 @@ void LinkedList::insertNodeAt(int d,int n){
         temp1=temp1->next;
         length++;
     }
-    
+    if(n>length){
+        cout<<"Index out of range"<<endl;
+        return;
+    }
+    temp1=head;
+    while(n-->1){
+        temp1=temp1->next;
+    }
+    newNode->next=temp1->next;
+    temp1->next=newNode;
+    return;
 }
 int main(){
     LinkedList l;
@@ -95,7 +105,7 @@ int main(){
     l.insertNode(3);
     l.insertNode(4);
     l.insertNode(5);
-    l.deleteNodeAt(6);
+    l.insertNodeAt(23,1);
     l.printList();
     return 0;
 }
