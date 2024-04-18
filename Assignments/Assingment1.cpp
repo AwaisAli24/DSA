@@ -23,7 +23,7 @@ class LinkedList{
     void deleteNodeAt(int n);
     void printList();
     void insertNodeAt(int d,int n);
-    void friend commonElements(LinkedList,LinkedList);
+    LinkedList friend commonElements(LinkedList,LinkedList);
 };
 void LinkedList::insertNode(int d){
     Node* newNode=new Node(d);
@@ -99,19 +99,21 @@ void LinkedList::insertNodeAt(int d,int n){
     temp1->next=newNode;
     return;
 }
-void commonElements(LinkedList l1,LinkedList l2){
+LinkedList commonElements(LinkedList l1,LinkedList l2){
+    LinkedList l3;
     Node *temp1=l1.head;
     Node *temp2=l2.head;
     while(temp1!=NULL){
         temp2=l2.head;
         while(temp2!=NULL){
             if(temp1->data==temp2->data){
-                cout<<temp1->data<<" is common."<<endl;
+                l3.insertNode(temp1->data);
             }
             temp2=temp2->next;
         }
         temp1=temp1->next;
     }
+    return l3;
 }
 int main(){
     LinkedList l1;
@@ -129,6 +131,7 @@ int main(){
     l2.insertNode(7);
     l2.insertNode(8);
     l2.printList();
-    commonElements(l1,l2);
+    LinkedList l3=commonElements(l1,l2);
+    l3.printList();
     return 0;
 }
