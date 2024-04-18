@@ -58,7 +58,7 @@ void LinkedList::deleteNodeAt(int n){
     }
     Node* temp1=head,*temp2=NULL;
     int length=0;
-    while(temp1->next!=NULL){
+    while(temp1!=NULL){
         temp1=temp1->next;
         length++;
     }
@@ -72,7 +72,7 @@ void LinkedList::deleteNodeAt(int n){
         delete temp1;
         return;
     }
-    while(n-->1){
+    for(int i=1;i<n;i++){
         temp2=temp1;
         temp1=temp1->next;
     }
@@ -92,7 +92,7 @@ void LinkedList::insertNodeAt(int d,int n){
         return;
     }
     temp1=head;
-    while(n-->1){
+    for(int i=1;i<n;i++){
         temp1=temp1->next;
     }
     newNode->next=temp1->next;
@@ -117,20 +117,23 @@ LinkedList commonElements(LinkedList l1,LinkedList l2){
 }
 int main(){
     LinkedList l1;
-    l1.insertNode(1);
-    l1.insertNode(2);
-    l1.insertNode(3);
     l1.insertNode(4);
-    l1.insertNode(5);
-    // l.insertNodeAt(23,1);
+    l1.insertNode(12);
+    l1.insertNode(43);
+    l1.insertNode(9);
+    l1.insertNode(7);
+    l1.insertNode(18);
+    l1.deleteNodeAt(3);
     l1.printList();
+
     LinkedList l2;
-    l2.insertNode(4);
-    l2.insertNode(5);
     l2.insertNode(6);
-    l2.insertNode(7);
-    l2.insertNode(8);
+    l2.insertNode(2);
+    l2.insertNode(9);
+    l2.insertNode(1);
+    l2.insertNodeAt(18,1);
     l2.printList();
+
     LinkedList l3=commonElements(l1,l2);
     l3.printList();
     return 0;
