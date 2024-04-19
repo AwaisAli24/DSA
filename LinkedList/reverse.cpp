@@ -1,14 +1,13 @@
 #include "LinkedList.h"
 void LinkedList::reverse(){
     Node* current=head;
-    Node* next=current->next;
     Node* prev=NULL;
 
     while(current!=NULL){
+    Node* next=current->next;
         current->next=prev;
         prev=current;
         current=next;
-        next=next->next;
     }
     head=prev;
 }
