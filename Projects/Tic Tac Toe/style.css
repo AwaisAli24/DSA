@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #22162B;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#title{
+    text-align: center;
+    color: #F8C630;
+}
+#table{
+    height: 600px;
+    width: 600px;
+    background-color: #451F55;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.boxes{
+    width: 190px;
+    height: 190px;
+    background-color: #22162B;
+}
