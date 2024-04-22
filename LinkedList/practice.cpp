@@ -75,7 +75,11 @@ class LinkedList{
     void insertNodeAt(int d,int n){
         Node* newNode=new Node(d);
         Node* temp=head;
-        
+        for(int i=1;i<n;i++){
+            temp=temp->next;
+        }
+        newNode->next=temp->next;
+        temp->next=newNode;
     }
 };
 int main(){
@@ -86,7 +90,7 @@ int main(){
     l.insertNode(9);
     l.insertNode(4);
     l.printList();
-    l.deleteNode(5);
+    l.insertNodeAt(5,1);
     l.printList();
     return 0;
 }
