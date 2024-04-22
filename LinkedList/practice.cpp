@@ -98,6 +98,25 @@ class LinkedList{
             temp1=temp1->next;
         }
     }
+    int search(int n){
+        Node* temp=head;
+        int pos=0;
+        bool found=false;
+        while(temp!=NULL){
+            pos++;
+            if(temp->data==n){
+                found=true;
+                break;
+            }
+            temp=temp->next;
+        }
+        if(found){
+            return pos;
+        }
+        else{
+            return -1;
+        }
+    }
 };
 int main(){
     LinkedList l;
@@ -111,5 +130,6 @@ int main(){
     l.printList();
     l.sort();
     l.printList();
+    cout<<l.search(6)<<endl;
     return 0;
 }
