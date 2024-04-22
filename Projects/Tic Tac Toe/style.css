@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -23,9 +24,18 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+    gap: 1px;
 }
 .boxes{
     width: 190px;
     height: 190px;
     background-color: #22162B;
+    color: #F8C630;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Raleway";
+    padding: auto;
+    font-size: 120px;
+    border-radius: 30px;
 }
