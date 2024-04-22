@@ -47,7 +47,35 @@ class LinkedList{
     }
 //Deleteing a node at a specific postion
     void deleteNode(int n){
-        Node* temp
+        Node* temp1=head;
+        Node* temp2=NULL;
+        if(n==1){
+            head=head->next;
+            delete temp1;
+            return;
+        }
+        int length=0;
+        while(temp1!=NULL){
+            temp1=temp1->next;
+            length++;
+        }
+        temp1=head;
+        if(n>length){
+            cout<<"Index out of range."<<endl;
+            return;
+        }
+        for(int i=1;i<n;i++){
+            temp2=temp1;
+            temp1=temp1->next;
+        }
+        temp2->next=temp1->next;
+        delete temp1;
+    }
+//Inserting node after a specific node
+    void insertNodeAt(int d,int n){
+        Node* newNode=new Node(d);
+        Node* temp=head;
+        
     }
 };
 int main(){
@@ -57,6 +85,8 @@ int main(){
     l.insertNode(1);
     l.insertNode(9);
     l.insertNode(4);
+    l.printList();
+    l.deleteNode(5);
     l.printList();
     return 0;
 }
