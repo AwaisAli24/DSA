@@ -81,6 +81,23 @@ class LinkedList{
         newNode->next=temp->next;
         temp->next=newNode;
     }
+//sorting a linkedlist
+    void sort(){
+        Node* temp1=head;
+        int temp;
+        while(temp1!=NULL){
+            Node* temp2=temp1->next;
+            while(temp2!=NULL){
+                if(temp2->data<temp1->data){
+                    temp=temp1->data;
+                    temp1->data=temp2->data;
+                    temp2->data=temp;
+                }
+                temp2=temp2->next;
+            }
+            temp1=temp1->next;
+        }
+    }
 };
 int main(){
     LinkedList l;
@@ -91,6 +108,8 @@ int main(){
     l.insertNode(4);
     l.printList();
     l.insertNodeAt(5,1);
+    l.printList();
+    l.sort();
     l.printList();
     return 0;
 }
