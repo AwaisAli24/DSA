@@ -15,8 +15,8 @@ class Node{
     }
 };
 class LinkedList{
-    Node *head;
     public:
+    Node *head;
     void reverse();
     LinkedList(){
         head=NULL;
