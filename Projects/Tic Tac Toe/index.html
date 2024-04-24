@@ -7,8 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="body">
+    <header>
         <h1 id="title">Tic Tac Toe</h1>
+    </header>
+    <div class="body">
+        <div class="panel">
+            <div class="panelBox">
+                <h3>Player 1</h3>
+                <input type="text" name="" id="player1" class="names">
+            </div>
+            <div class="panelBox">
+                <h3>Player 2</h3>
+                <input type="text" name="" id="player2" class="names">
+            </div>
+        </div>
         <div id="table">
             <button class="boxes"></button>
             <button class="boxes"></button>
@@ -19,6 +31,14 @@
             <button class="boxes"></button>
             <button class="boxes"></button>
             <button class="boxes"></button>
+        </div>
+        <div class="panel">
+            <button id="newBtn">New Game</button>
+            <button id="resetBtn">Reset Game</button>
+            <h3 id="win">Winner: &#160;</h3>
+            <h1>Total wins:</h1>
+            <h2 id="pl1">Player 1:</h2>
+            <h2 id="pl2">Player 2:</h2>
         </div>
     </div>
     <script src="script.js"></script>
