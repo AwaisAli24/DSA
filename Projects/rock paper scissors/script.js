@@ -2,11 +2,14 @@ let choices = document.querySelectorAll(".buttons");
 let userChoice=-1;
 let computerChoice=-1
 let result=-1;
-let msg=document.querySelector("#msg")
+let computerMsg="";
+let msg=document.querySelector("#msg");
+let msg2=document.querySelector("#sysChoice");
 choices.forEach((choice)=>{
     choice.addEventListener("click",()=>{
         userChoice=choice.id;
         computerChoice=Math.floor(Math.random() * 3);
+        assignMsg();
         compare();
         winner();
     })
@@ -35,6 +38,7 @@ const compare=()=>{
     }
 }
 const winner= ()=>{
+    msg2.innerText=`Computer chose ${computerMsg}.`;
     if(result==0){
         msg.innerText="Draw! You Both Chose The Same.";
     }
@@ -46,3 +50,14 @@ const winner= ()=>{
     }
 }
 
+const assignMsg = ()=>{
+    if(computerChoice==0){
+        computerMsg="Rock";
+    }
+    else if(computerChoice==1){
+        computerMsg="Paper";
+    }
+    else if(computerChoice==2){
+        computerMsg="Scissor";
+    }
+}
