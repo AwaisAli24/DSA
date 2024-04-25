@@ -6,6 +6,8 @@ let winMsg = document.querySelector("#win");
 let resetButton = document.querySelector("#resetBtn");
 let player1Wins=0;
 let player2Wins=0;
+let pl1=document.querySelector("#pl1");
+let pl2=document.querySelector("#pl2");
 const winPatterns = [
     [0, 1, 2],
     [0, 3, 6],
@@ -69,5 +71,7 @@ const resetGame = ()=>{
         box.innerText="";
     }
     winMsg.innerText="Winner: ";
+    pl1.innerText+=player1Wins;
+    pl2.innerText+=player2Wins;
 }
 resetButton.addEventListener("click",resetGame);
