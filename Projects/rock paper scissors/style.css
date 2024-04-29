@@ -24,6 +24,8 @@ main{
     width: 200px;
     border: none;
     border-radius: 50%;
+    transition: all;
+    transition-duration: 100ms;
 }
 .box{
     text-align: center;
@@ -35,4 +37,9 @@ footer{
 .msgBox{
     margin-top: 10px;
     padding: 10px;
+}
+.buttons:hover{
+    opacity: 50%;
+    cursor: pointer;
+    border: 2px solid black;
 }
