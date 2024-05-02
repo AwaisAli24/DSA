@@ -64,4 +64,8 @@ button{
     padding: 7px;
     background-color: #BFCDE0;
     font-weight: bold;
+    cursor: pointer;
+}
+button:hover{
+    opacity: 50%;
 }
