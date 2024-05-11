@@ -71,7 +71,7 @@ const resetGame = ()=>{
         box.innerText="";
     }
     winMsg.innerText="Winner: ";
-    pl1.innerText+=player1Wins;
-    pl2.innerText+=player2Wins;
+    pl1.innerText=`${player1.value}:${player1Wins}`;
+    pl2.innerText=`${player2.value}:${player2Wins}`;
 }
 resetButton.addEventListener("click",resetGame);
