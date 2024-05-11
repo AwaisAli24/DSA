@@ -4,11 +4,7 @@ class Node{
     public:
     int data;
     Node* next;
-    Node(){
-        data=0;
-        next=NULL;
-    }
-    Node(int d){
+    Node(int d=0){
         data=d;
         next=NULL;
     }
@@ -43,6 +39,12 @@ class Stack{
 };
 int main(){
     Stack s;
-    s.pop();
+    s.push(1);
+    s.push(2);
+    s.push(3);
+    s.push(4);
+    s.push(5);
+    cout<<s.pop()<<endl;
+    cout<<s.peek()<<endl;
     return 0;
 }
