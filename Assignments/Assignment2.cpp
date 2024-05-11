@@ -28,14 +28,6 @@ class Stack{
         newNode->next=top;
         top=newNode;
     }
-    void display(){
-        Node* temp=top;
-        while(temp!=NULL){
-            cout<<temp->data<<" ";
-            temp=temp->next;
-        }
-        cout<<endl;
-    }
     int peek(){
         return top->data;
     }
