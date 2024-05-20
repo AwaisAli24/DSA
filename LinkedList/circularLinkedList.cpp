@@ -41,19 +41,29 @@ class LinkedList{
         }while(temp!=head);
         cout<<endl;
     }
-    void josephus(){
-        for(int i=0;i<9;i++){
-            Node* temp1=head;
-            Node* temp2=NULL;
-            for(int i=1;i<3;i++){
-                temp2=temp1;
-                temp1=temp1->next;
+    void josephus(int n){
+        Node* curr=head;
+        Node* prev=NULL;
+        while(curr->next!=curr){
+            for(int i=0;i<n-1;i++){
+                prev=curr;
+                curr=curr->next;
             }
-            if(temp1==head){
-                head=head->next;
+            prev->next=curr->next;
+            Node* temp=curr;
+            curr=curr->next;
+            delete temp;
+        }
+        head=curr;
+    }
+    void printReverse(){
+        int length=10;
+        for(int i=0;i<length;i++){
+            Node* temp=head;
+            for(int j=1;j<length-i;j++){
+                temp=temp->next;
             }
-            temp2=temp1->next;
-            delete temp1;
+            cout<<temp->data<<" ";
         }
     }
 };
@@ -69,7 +79,8 @@ int main(){
     l.addNode(8);
     l.addNode(9);
     l.addNode(10);
-    l.josephus();
+    // l.josephus(3);
     // l.printList();
+    l.printReverse();
     return 0;
 }

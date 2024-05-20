@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 class Node{
     public:
@@ -15,8 +16,8 @@ class Node{
     }
 };
 class LinkedList{
-    Node *head;
     public:
+    Node *head;
     LinkedList(){
         head=NULL;
     }
@@ -71,15 +72,44 @@ class LinkedList{
         cout<<endl;
     }
 };
-int main(){
+void func(LinkedList &l1,LinkedList &l2){
+    Node* temp=l1.head;
+    int length=0;
+    while(temp!=NULL){
+        length++;
+        temp=temp->next;
+    }
+    for(int i=0;i<length;i++){
+        temp=l1.head;
+        for(int j=1;j<length-i;j++){
+            temp=temp->next;
+        }
+        l2.addNode(temp->value);
+    }
+}
+void func2(int n,int x){
     LinkedList list;
-    list.addNode(1);
-    list.addNode(2);
-    list.addNode(3);
-    list.addNode(4);
-    list.addNode(5);
+    for(int i=1;i<x;i++){
+        list.addNode(pow(n,i));
+    }
     list.printList();
-    list.deleteNode(3);
-    list.printList();
+}
+int main(){
+    //1st Question
+    LinkedList list1,list2;
+    list1.addNode(1);
+    list1.addNode(2);
+    list1.addNode(3);
+    list1.addNode(4);
+    list1.addNode(5);
+    func(list1,list2);
+    list2.printList();
+    //2nd question
+    int number,power;
+    cout<<"Enter a number:";
+    cin>>number;
+    cout<<"Enter the power:";
+    cin>>power;
+    func2(number,power);
     return 0;
 }
