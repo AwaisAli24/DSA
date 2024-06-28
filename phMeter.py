@@ -30,10 +30,13 @@ class PHMeterApp:
     def read_from_port(self):
         while self.running:
             if self.ser.in_waiting > 0:
-                line = self.ser.readline().decode('utf-8').strip()
-                if line.startswith("pH Val: "):
-                    ph_value = line.split(": ")[1]
-                    self.update_ph_value(ph_value)
+                try:
+                    line = self.ser.readline().decode('utf-8', errors='ignore').strip()
+                    if line.startswith("pH Val: "):
+                        ph_value = line.split(": ")[1]
+                        self.update_ph_value(ph_value)
+                except UnicodeDecodeError as e:
+                    self.label.config(text=str(e))
 
     def update_ph_value(self, ph):
         # Update the label with the pH value
